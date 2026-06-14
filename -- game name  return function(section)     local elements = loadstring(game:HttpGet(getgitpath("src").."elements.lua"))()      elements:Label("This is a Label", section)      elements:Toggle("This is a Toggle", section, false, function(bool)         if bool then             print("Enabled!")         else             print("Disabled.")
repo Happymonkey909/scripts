@@ -1,0 +1,23 @@
+-- game name
+
+return function(section)
+    local elements = loadstring(game:HttpGet(getgitpath("src").."elements.lua"))()
+
+    elements:Label("This is a Label", section)
+
+    elements:Toggle("This is a Toggle", section, false, function(bool)
+        if bool then
+            print("Enabled!")
+        else
+            print("Disabled.")
+        end
+    end)
+
+    elements:Button("This is a Button", section, function()
+        print("Clicked!")
+    end)
+
+    elements:Textbox("This is a TextBox, section, "", function(str)
+        print("Typed: "..str)
+    end)
+end
